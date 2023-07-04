@@ -1,7 +1,7 @@
 const clickBox = document.querySelector('.box-image');
 const mainSection = document.querySelector('.main-section');
 const textNavigate = document.querySelector('.text-navigate');
-const navigateSec = document.querySelector('.navigate-sec');
+const navigateSec = document.querySelector('.section-navigate');
 const listItem = document.querySelector('.main-section .section-navigate .navigate-box ul');
 const TextHide = document.querySelector('.text-navigate');
 
@@ -39,11 +39,15 @@ const liElements = document.querySelectorAll('li');
 
 liElements.forEach((li) => {
   li.addEventListener('mouseover', () => {
-    li.querySelector('a').classList.add('mouseover-animate');
+    if (window.innerWidth < 1024) {
+      li.querySelector('a').classList.add('mouseover-animate');
+    }
   });
 
   li.addEventListener('mouseout', () => {
-    li.querySelector('a').classList.remove('mouseover-animate');
+    if (window.innerWidth < 1024) {
+      li.querySelector('a').classList.remove('mouseover-animate');
+    }
   });
 });
 
